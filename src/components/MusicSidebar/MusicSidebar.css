@@ -1,0 +1,43 @@
+:root {
+  --sidebar-background: #3b2a1f; /* Fundo escuro para a barra lateral */
+  --sidebar-border: #6a4f2f; /* Cor da borda da barra lateral */
+  --button-background: #6a4f2f; /* Cor de fundo dos botões no tema padrão */
+  --button-hover-background: #4a3b2a; /* Cor de fundo dos botões ao passar o mouse no tema padrão */
+  --button-text-color: #fff; /* Cor do texto dos botões */
+}
+
+.music-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 98vh; /* Ajuste a altura conforme necessário */
+  width: 300px; /* Largura da barra lateral */
+  background: var(--sidebar-background); /* Usar a variável para o fundo da barra lateral */
+  border: 2px solid var(--sidebar-border); /* Usar a variável para a borda da barra lateral */
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para efeito de profundidade */
+  overflow-y: auto; /* Adiciona rolagem se o conteúdo for maior que a altura */
+  z-index: 10; /* Garante que a barra lateral fique acima do conteúdo principal */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribui o espaço entre os componentes */
+}
+
+.music-player {
+  /* Adiciona um pouco de margem se necessário */
+  margin-bottom: 10px;
+}
+
+.music-controls {
+  /* Fica no final da barra lateral */
+  margin-top: auto;
+}
+
+/* Ajustes para o modo daltônico */
+[data-theme="daltonic"] {
+  --sidebar-background: #a07a5a; /* Cor de fundo ajustada para daltônicos */
+  --sidebar-border: #8b5e3c; /* Cor da borda ajustada para daltônicos */
+  --button-background: #a07a5a; /* Cor de fundo dos botões ajustada para daltônicos */
+  --button-hover-background: #8b5e3c; /* Cor de fundo dos botões ao passar o mouse ajustada para daltônicos */
+  --button-text-color: #000; /* Cor do texto ajustada para daltônicos */
+}

@@ -1,0 +1,35 @@
+:root {
+  --button-background: #6a4f2f; /* Cor de fundo dos botões no tema padrão */
+  --button-hover-background: #4a3b2a; /* Cor de fundo dos botões ao passar o mouse no tema padrão */
+  --button-text-color: #fff; /* Cor do texto dos botões */
+}
+
+.music-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%; /* Ocupa 100% da largura do MusicSidebar */
+}
+
+.music-controls button {
+  margin: 5px 0; /* Remova as margens laterais para que os botões ocupem toda a largura */
+  padding: 10px;
+  width: 100%; /* Ocupa 100% da largura disponível */
+  background-color: var(--button-background); /* Usar a variável definida para o fundo dos botões */
+  color: var(--button-text-color); /* Usar a variável definida para a cor do texto dos botões */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.music-controls button:hover {
+  background-color: var(--button-hover-background); /* Usar a variável definida para o fundo dos botões ao passar o mouse */
+}
+
+/* Ajustes para o modo daltônico */
+[data-theme="daltonic"] {
+  --button-background: #a07a5a; /* Cor ajustada para daltônicos */
+  --button-hover-background: #8b5e3c; /* Cor ajustada para daltônicos */
+  --button-text-color: #000; /* Cor ajustada para daltônicos */
+}

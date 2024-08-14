@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+/* Estilização para o MusicPlayer e MusicControls dentro do MusicSidebar */
+.music-player {
+  flex: 1; /* Ocupa o espaço disponível */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.music-controls {
+  margin-top: auto; /* Empurra para o fundo da sidebar */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Estilização para o Board */
+.board-container {
+  display: flex;
+  justify-content: center; /* Centraliza o tabuleiro horizontalmente */
+  position: relative; /* Adiciona contexto para o z-index */
+  margin-left: 300px; /* Adiciona margem para a largura do sidebar */
+  height: 100vh; /* Define a altura para o container do tabuleiro ocupar a altura total da tela */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--sidebar-border); /* Usa a variável de cor da borda */
+  background-color: var(--background-color); /* Cor de fundo do tabuleiro */
+  z-index: 5; /* Garante que o tabuleiro esteja acima do conteúdo abaixo */
+  margin: auto; /* Centraliza o tabuleiro verticalmente dentro do container */
+}
+
+/* Outros estilos do App.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color); /* Fundo do body para se ajustar ao tema */
+}
+
+/* Definição de cores padrão */
+:root {
+  --light-square-color: #f0d9b5; /* Cor clara dos quadrados do tabuleiro */
+  --dark-square-color: #b58863; /* Cor escura dos quadrados do tabuleiro */
+  --selected-square-color: rgba(
+    255,
+    255,
+    0,
+    0.5
+  ); /* Cor para casa selecionada */
+  --possible-move-color: rgba(
+    0,
+    255,
+    0,
+    0.5
+  ); /* Cor para casas possíveis de movimento */
+  --sidebar-background: #3b2a1f; /* Cor de fundo da barra lateral */
+  --sidebar-border: #6a4f2f; /* Cor da borda da barra lateral */
+  --background-color: #d8cfc4; /* Cor de fundo padrão */
+}
+
+/* Definição de cores daltônicas */
+[data-theme="daltonic"] {
+  --light-square-color: #d6d2c4; /* Cor clara dos quadrados do tabuleiro para daltônicos */
+  --dark-square-color: #a09d8f; /* Cor escura dos quadrados do tabuleiro para daltônicos */
+  --selected-square-color: rgba(
+    0,
+    255,
+    255,
+    0.5
+  ); /* Cor para casa selecionada para daltônicos */
+  --possible-move-color: rgba(
+    255,
+    0,
+    255,
+    0.5
+  ); /* Cor para casas possíveis de movimento para daltônicos */
+  --sidebar-background: #2a1f1b; /* Cor de fundo da barra lateral para daltônicos */
+  --sidebar-border: #4f3b2f; /* Cor da borda da barra lateral para daltônicos */
+  --background-color: #d8cfc4; /* Cor de fundo daltônica */
 }
