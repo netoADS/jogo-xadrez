@@ -25,7 +25,6 @@ const MusicSidebar = () => {
   return (
     <div className="music-sidebar">
       <MusicPlayer onSelectMusic={handleSelectMusic} currentMusic={currentMusic} />
-      <MusicControls onPlayPause={handlePlayPause} onStop={handleStop} isPlaying={isPlaying} />
     </div>
   );
 };

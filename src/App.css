@@ -1,3 +1,22 @@
+.theme-switcher {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  z-index: 100; /* Garante que o botão fique acima dos outros elementos */
+}
+
+.theme-switcher:hover {
+  background-color: var(--button-hover-background);
+}
+
+
 /* Estilização para o MusicPlayer e MusicControls dentro do MusicSidebar */
 .music-player {
   flex: 1; /* Ocupa o espaço disponível */

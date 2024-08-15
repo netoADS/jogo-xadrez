@@ -5,7 +5,7 @@ import Board from './components/Board/Board';
 import './App.css';
 
 const AppContent = () => {
-  const { theme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
@@ -13,6 +13,11 @@ const AppContent = () => {
 
   return (
     <div className="app-container">
+      {/* Botão de alternância de tema */}
+      <button className="theme-switcher" onClick={toggleTheme}>
+        Alternar Tema
+      </button>
+
       <MusicSidebar />
       <div className="main-content">
         <Board />

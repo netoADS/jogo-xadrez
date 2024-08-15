@@ -1,5 +1,5 @@
-// src/components/MusicPlayer/MusicPlayer.js
 import React, { useState, useRef } from 'react';
+import MusicControls from '../MusicControls/MusicControls'; // Importa o MusicControls
 import './MusicPlayer.css'; // Estilo para MusicPlayer
 
 const MusicPlayer = ({ onSelectMusic, currentMusic }) => {
@@ -37,11 +37,18 @@ const MusicPlayer = ({ onSelectMusic, currentMusic }) => {
   return (
     <div className="music-player">
       <audio ref={audioRef} src={currentMusic} />
+
       <div className="music-list">
         <button onClick={handleChangeMusic} value="/music/FinalAct.mp3">Final Act</button>
         <button onClick={handleChangeMusic} value="/music/TheRoad.mp3">The Road</button>
         {/* Adicione mais músicas aqui */}
       </div>
+
+      <MusicControls 
+        onPlayPause={handlePlayPause} 
+        onStop={handleStop} 
+        isPlaying={isPlaying} 
+      />
     </div>
   );
 };
