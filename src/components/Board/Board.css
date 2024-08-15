@@ -3,6 +3,21 @@
   justify-content: center; /* Centraliza o tabuleiro dentro do container */
   padding: 0;
   margin: 0;
+  position: relative; /* Adiciona contexto para o pseudo-elemento */
+}
+
+.board-container::before {
+  content: '';
+  position: absolute;
+  top: 10px; /* Ajuste conforme necessário */
+  left: 10px; /* Ajuste conforme necessário */
+  right: 10px; /* Ajuste conforme necessário */
+  bottom: 10px; /* Ajuste conforme necessário */
+  background-image: url('../../../public/image/file.png'); /* Caminho para a imagem da moldura */
+  background-size: contain; /* Ajusta a imagem da moldura para caber dentro do contêiner */
+  background-repeat: no-repeat; /* Não repete a imagem da moldura */
+  background-position: center; /* Centraliza a imagem da moldura */
+  z-index: 2; /* Coloca a moldura atrás do tabuleiro */
 }
 
 .board {
@@ -11,10 +26,13 @@
   border: 2px solid var(--sidebar-border); /* Usar a variável definida para borda */
   background-color: var(--light-square-color); /* Cor de fundo do tabuleiro usando a variável */
   max-width: 100%; /* Limita a largura máxima do tabuleiro */
-  width: 800px; /* Largura fixa do tabuleiro */
+  width: 45%; /* Reduz a largura do tabuleiro para ajustar à moldura */
+  height: 68.4vh;
   box-sizing: border-box; /* Inclui a borda e o padding no tamanho total */
+  position: relative; /* Adiciona contexto para a moldura */
 }
 
+/* Resto do CSS */
 .board-row {
   display: flex;
   width: 100%; /* Garante que cada linha ocupe 100% da largura do tabuleiro */
@@ -22,7 +40,7 @@
 
 .square {
   flex: 1; /* Cada quadrado ocupa uma parte igual da linha */
-  height: 100px;
+  height: 8.5vh;
   display: flex;
   justify-content: center;
   align-items: center;
